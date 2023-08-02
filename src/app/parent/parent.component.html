@@ -1,0 +1,40 @@
+<fieldset>
+    <legend>
+        <h2>Parent</h2>
+    </legend>
+
+    <fieldset>
+        <legend>
+            <h2>Child</h2>
+        </legend>
+
+        <app-child [getName]='name' (sentMessage)="gettingData($event)">
+
+            <p class="result">123456</p>
+            <p>ABCDEF</p>
+
+        </app-child>
+
+
+
+    </fieldset>
+
+
+    <p>Get Message From Child : {{myData}}</p>
+
+    <p>My School : {{child?.childData }}</p>
+
+    <!-- <p>Message Result : </p> -->
+
+    <ng-template #isTrue>
+        Welcome
+    </ng-template>
+    <ng-template #isFalse>
+        Bye Bye
+    </ng-template>
+    <div *ngIf="message; else isFalse">
+        <ng-container [ngTemplateOutlet]="isTrue" ></ng-container>
+      </div>
+      
+
+</fieldset>

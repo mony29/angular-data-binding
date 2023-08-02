@@ -1,0 +1,12 @@
+
+
+<fieldset>
+    <legend>
+        <h2>Data Binding</h2>
+    </legend>
+    <h3>Title : {{ title }} </h3>
+    <input type="text" [value]="author">
+    <br><br>
+    <input type="text" [(ngModel)]="newTitle">
+    <button (click)="updateTitle($event)" type="button" style="margin-left: 5px;">Update</button>
+</fieldset>
